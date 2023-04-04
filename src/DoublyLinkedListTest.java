@@ -13,4 +13,10 @@ public class DoublyLinkedListTest {
         assertEquals(node3, list.getTail());
         assertEquals(3, list.getSize());
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testInsertOutOfBounds() {
+        DoublyLinkedList<String> list = new DoublyLinkedList<>();
+        list.insert(1, "one");
+    }
 }
