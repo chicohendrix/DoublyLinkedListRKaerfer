@@ -1,3 +1,5 @@
+// By Ritvik Kumar Kothapalli
+
 import java.util.Random;
 
 public class Album implements Comparable<Album> {
