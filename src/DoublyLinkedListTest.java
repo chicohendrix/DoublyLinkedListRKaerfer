@@ -33,4 +33,9 @@ public class DoublyLinkedListTest {
         assertEquals(2, list.getSize());
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testDeleteOutOfBounds() {
+        DoublyLinkedList<String> list = new DoublyLinkedList<>();
+        list.delete(0);
+    }
 }
