@@ -72,4 +72,19 @@ public class DoublyLinkedListTest {
         assertEquals(6, list.getSize());
         assertNotEquals("one -> two -> three -> four -> five -> six -> NULL", list.toString());
     }
+
+    @Test
+    public void testPartition() {
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.append(4);
+        DoublyLinkedList<Integer> newList = list.partition(3);
+        assertEquals(2, list.getSize());
+        assertEquals(2, newList.getSize());
+        assertEquals("1 -> 2 -> NULL", list.toString());
+        assertEquals("3 -> 4 -> NULL", newList.toString());
+    }
+
 }
