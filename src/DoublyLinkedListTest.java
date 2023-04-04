@@ -87,4 +87,18 @@ public class DoublyLinkedListTest {
         assertEquals("3 -> 4 -> NULL", newList.toString());
     }
 
+    @Test
+    public void testAlbum() {
+        Album album1 = new Album(1, "Artist 1", "Album 1", 10);
+        Album album2 = new Album(2, "Artist 2, Artist 3", "Album 2", 5);
+        Album album3 = new Album(3, "Artist 4, Artist 5", "Album 3", 8);
+        DoublyLinkedList<Album> list = new DoublyLinkedList<>();
+        Node<Album> node1 = list.append(album1);
+        Node<Album> node2 = list.append(album2);
+        Node<Album> node3 = list.append(album3);
+        assertEquals(node1, list.getHead());
+        assertEquals(node3, list.getTail());
+        assertEquals(3, list.getSize());
+        assertEquals("1: 10 -- [Artist 1] -> 2: 5 -- [Artist 2, Artist 3] -> 3: 8 -- [Artist 4, Artist 5] -> NULL", list.toString());
+    }
 }
