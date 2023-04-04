@@ -57,4 +57,19 @@ public class DoublyLinkedListTest {
         list.append("three");
         assertEquals("one -> two -> three -> NULL", list.toString());
     }
+
+
+    @Test
+    public void testShuffle() {
+        DoublyLinkedList<String> list = new DoublyLinkedList<>();
+        list.append("one");
+        list.append("two");
+        list.append("three");
+        list.append("four");
+        list.append("five");
+        list.append("six");
+        Node<String> shuffledHead = list.shuffle();
+        assertEquals(6, list.getSize());
+        assertNotEquals("one -> two -> three -> four -> five -> six -> NULL", list.toString());
+    }
 }
