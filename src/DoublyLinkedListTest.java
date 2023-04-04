@@ -38,4 +38,14 @@ public class DoublyLinkedListTest {
         DoublyLinkedList<String> list = new DoublyLinkedList<>();
         list.delete(0);
     }
+
+    @Test
+    public void testGetIndex() {
+        DoublyLinkedList<String> list = new DoublyLinkedList<>();
+        list.append("one");
+        list.append("two");
+        list.append("three");
+        assertEquals(1, list.getIndex("two"));
+        assertEquals(-1, list.getIndex("four"));
+    }
 }
