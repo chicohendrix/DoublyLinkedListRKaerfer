@@ -48,4 +48,13 @@ public class DoublyLinkedListTest {
         assertEquals(1, list.getIndex("two"));
         assertEquals(-1, list.getIndex("four"));
     }
+
+    @Test
+    public void testToString() {
+        DoublyLinkedList<String> list = new DoublyLinkedList<>();
+        list.append("one");
+        list.append("two");
+        list.append("three");
+        assertEquals("one -> two -> three -> NULL", list.toString());
+    }
 }
