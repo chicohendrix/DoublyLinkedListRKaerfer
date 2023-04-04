@@ -19,4 +19,18 @@ public class DoublyLinkedListTest {
         DoublyLinkedList<String> list = new DoublyLinkedList<>();
         list.insert(1, "one");
     }
+
+
+    @Test
+    public void testDelete() {
+        DoublyLinkedList<String> list = new DoublyLinkedList<>();
+        list.append("one");
+        list.append("two");
+        Node<String> node3 = list.append("three");
+        Node<String> deleted = list.delete(1);
+        assertEquals("two", deleted.getData());
+        assertEquals(node3, list.getTail());
+        assertEquals(2, list.getSize());
+    }
+
 }
